@@ -1,0 +1,60 @@
+{
+    "data": [
+        {"ourQualities" : [
+            
+        ],
+        "dishes": [
+            {
+                "id": 1,
+                "image": "./dinner1.jpeg",
+                "title": "Dal Makhani",
+                "category": "Lunch"
+            },
+            {
+                "id": 2,
+                "image": "./dinner2.png",
+                "title": "Butter Chicken",
+                "category": "Dinner"
+            },
+            {
+                "id": 3,
+                "image": "./breakfast1.png",
+                "title": "Rasmalai",
+                "category": "Breakfast"
+            }
+           
+        ],
+        
+        
+        
+        "navbarLinks": [
+            {
+                "id": 1,
+                "title": "HOME",
+                "link": "heroSection"
+            },
+            {
+                "id": 2,
+                "title": "ABOUT",
+                "link": "about"
+            },
+            {
+                "id": 3,
+                "title": "MENU",
+                "link": "qualities"
+            },
+            {
+                "id": 4,
+                "title": "CONTACT",
+                "link": "contact"
+            },
+            {
+                "id": 5,
+                "title": "RESERVATION",
+                "link": "reservation"
+            }
+        ]
+    
+    } 
+    ]
+}
