@@ -1,0 +1,101 @@
+/* Main Section */
+.about-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fffaf0; /* Light, warm background */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Flexbox Layout for Two Columns */
+  .about-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px; /* Space between image and text */
+  }
+  
+  /* Image Container */
+  .image-container {
+    flex: 1; /* Take up one part of the space */
+  }
+  
+  .restaurant-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for better focus */
+  }
+  
+  /* Content Styling */
+  .about-content {
+    flex: 2; /* Take up two parts of the space */
+  }
+  
+  .welcome-title {
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 20px;
+  }
+  
+  .intro-paragraph,
+  .invitation-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .invitation-text {
+    font-style: italic;
+    color: #555;
+  }
+  
+  /* Client Reviews */
+  .client-reviews-title {
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    color: #000;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+  
+  .reviews-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+  }
+  
+  .review-box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+  }
+  
+  .client-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  
+  .client-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #444;
+  }
+  
+  .client-review {
+    font-size: 1rem;
+    font-style: italic;
+    color: #666;
+    line-height: 1.5;
+  }
+  
