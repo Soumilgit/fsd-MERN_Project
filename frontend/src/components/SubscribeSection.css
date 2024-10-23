@@ -1,0 +1,33 @@
+/* Container Styling */
+.subscribe-section {
+    background-color: #2e2e2e; /* Dark grey background */
+    text-align: center; /* Center the text and button */
+    padding: 40px 0; /* Space at the top and bottom */
+    border-top: 2px solid #0046ad; /* Optional: blue border on top */
+  }
+  
+  /* Title Styling */
+  .subscribe-title {
+    color: white; /* White text */
+    font-size: 24px; /* Large font size */
+    font-weight: bold; /* Bold the text */
+    margin-bottom: 20px; /* Space between title and button */
+  }
+  
+  /* Button Styling */
+  .subscribe-button {
+    background-color: #f18528; /* Orange background */
+    color: white; /* White text */
+    font-size: 16px; /* Button text size */
+    font-weight: bold; /* Bold text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 12px 24px; /* Button padding */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .subscribe-button:hover {
+    background-color: #e67700; /* Darker orange on hover */
+  }
+  
