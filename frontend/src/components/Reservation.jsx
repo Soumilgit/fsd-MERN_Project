@@ -1,42 +1,47 @@
 import React from "react";
+import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const Reservation = () => {
-  const [fullName, setFullName] = useState(""); // Use a single state for full name
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [date, setDate] = useState("");
-  const [numberOfSeats, setNumberOfSeats] = useState(0); // New state for number of seats
-  const [phone, setPhone] = useState("");
+  const [time, setTime] = useState("");
+  const [phone, setPhone] = useState(0);
   const navigate = useNavigate();
+
+  const validateForm = () => {
+    return (
+      firstName.length > 0 &&
+      lastName.length > 0 &&
+      email.includes("@") &&
+      phone.toString().length === 10 &&
+      date !== "" &&
+      time !== ""
+    );
+  };
 
   const handleReservation = async (e) => {
     e.preventDefault();
-    const [firstName, lastName] = fullName.split(" "); // Split full name into first and last
-    try {
-      const { data } = await axios.post(
-        "http://localhost:5173/reservation/send",
-        { firstName, lastName, email, phone, date, numberOfSeats }, // Use the correct state variable
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true,
-        }
-      );
-      toast.success(data.message);
-      // Clear form fields
-      setFullName("");
-      setEmail("");
-      setNumberOfSeats(0);
-      setPhone("");
-      setDate("");
-      navigate("/success");
-    } catch (error) {
-      toast.error(error.response.data.message);
+    if (!validateForm()) {
+      toast.error("Please fill out all fields correctly.");
+      return;
     }
+
+    // Clear form fields
+    setFirstName("");
+    setLastName("");
+    setPhone(0);
+    setEmail("");
+    setTime("");
+    setDate("");
+
+    // Navigate to success page
+    navigate("/success");
   };
 
   return (
@@ -48,13 +53,20 @@ const Reservation = () => {
         <div className="banner">
           <div className="reservation_form_box">
             <h1>MAKE A RESERVATION</h1>
-            <form>
+            <p>For Further Questions, Please Call</p>
+            <form onSubmit={handleReservation}>
               <div>
                 <input
                   type="text"
-                  placeholder="Full Name"
-                  value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
+                  placeholder="First Name"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                />
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
                 />
               </div>
               <div>
@@ -65,10 +77,10 @@ const Reservation = () => {
                   onChange={(e) => setDate(e.target.value)}
                 />
                 <input
-                  type="number"
-                  placeholder="Number of Seats"
-                  value={numberOfSeats} // Use numberOfSeats state
-                  onChange={(e) => setNumberOfSeats(e.target.value)} // Update the state correctly
+                  type="time"
+                  placeholder="Time"
+                  value={time}
+                  onChange={(e) => setTime(e.target.value)}
                 />
               </div>
               <div>
@@ -80,16 +92,13 @@ const Reservation = () => {
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 <input
-                  type="tel" // Change type to "tel" for phone input
-                  placeholder="Phone Number"
+                  type="number"
+                  placeholder="Phone"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                 />
               </div>
-              <button type="submit" onClick={handleReservation}>
-                Make a Reservation{" "}
-               
-              </button>
+              <button type="submit">RESERVE NOW{""}</button>
             </form>
           </div>
         </div>
