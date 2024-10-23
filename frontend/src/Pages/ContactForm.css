@@ -1,0 +1,111 @@
+/* Topbar */
+.topbar {
+  width: 100%;
+  background-color: #333; /* Dark topbar */
+  padding: 15px;
+  color: white;
+  position: fixed; /* Keeps the topbar fixed */
+  top: 0;
+  z-index: 10;
+}
+
+.topbar h1 {
+  margin: 0;
+}
+
+.topbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.topbar nav ul li {
+  display: inline;
+  color: white;
+}
+
+/* Page Layout */
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  margin-top: 100px; /* Push content below the topbar */
+}
+
+/* Header Section */
+.contact-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #c4c4c4; /* Light gray background */
+  width: 100%;
+  padding: 20px;
+}
+
+.header-image {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.contact-header h2 {
+  color: #000000;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+
+/* Form Layout */
+.contact-form {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 30px;
+  width: 350px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h3 {
+  text-align: center;
+  color: #000000;
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Input Fields */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.contact-form textarea {
+  height: 100px;
+  resize: none;
+}
+
+/* Button */
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #8a2076; /* Purple color */
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #741762; /* Darker purple on hover */
+}
