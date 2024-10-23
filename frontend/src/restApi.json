@@ -6,22 +6,54 @@
         "dishes": [
             {
                 "id": 1,
-                "image": "./dinner1.jpeg",
-                "title": "Dal Makhani",
+                "image": "./butterchicken.png",
+                "title": "Butter Chicken",
                 "category": "Lunch"
             },
             {
                 "id": 2,
-                "image": "./dinner2.png",
-                "title": "Butter Chicken",
+                "image": "./muttonrogan.png",
+                "title": "Mutton Rogan",
                 "category": "Dinner"
             },
             {
                 "id": 3,
-                "image": "./breakfast1.png",
-                "title": "Rasmalai",
+                "image": "./dalmakhani.jpeg",
+                "title": "Dal Makhani",
+                "category": "Lunch"
+            },
+            {
+                "id": 4,
+                "image": "./butterpaneer.png",
+                "title": "Butter Paneer",
+                "category": "Dinner"
+            },
+            
+            {
+                "id":5,
+                "image": "./butternaan.png",
+                "title": "Butter Naan",
+                "category": "Dinner"
+            },
+            {
+                "id": 6,
+                "image": "./butterroti.png",
+                "title": "Butter Roti",
                 "category": "Breakfast"
+            },
+            {
+                "id": 7,
+                "image": "./rasmalai.png",
+                "title": "Rasmaalai",
+                "category": "Lunch"
+            },
+            {
+                "id": 8,
+                "image": "./brownie.png",
+                "title": "Brownie Cream",
+                "category": "Dinner"
             }
+
            
         ],
         
@@ -43,13 +75,9 @@
                 "title": "MENU",
                 "link": "qualities"
             },
+           
             {
                 "id": 4,
-                "title": "CONTACT",
-                "link": "contact"
-            },
-            {
-                "id": 5,
                 "title": "RESERVATION",
                 "link": "reservation"
             }
