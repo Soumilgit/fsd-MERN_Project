@@ -5,6 +5,7 @@ import About from '../../components/About'
 import Qualities from '../../components/Qualities'
 import Menu from '../../components/Menu'
 import Reservation from '../../components/Reservation'
+import Getnewsandoffers from '../../components/Getnewsandoffers'
 import Footer from '../../components/Footer'
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <Qualities/>
       <Menu/>
       <Reservation/>
+      <Getnewsandoffers/>
       <Footer/>
     </>
   )
