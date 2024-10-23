@@ -6,10 +6,10 @@ function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [error, setError] = useState(''); // To store error messages
+  const [error, setError] = useState('');
+  const [showToast, setShowToast] = useState(false); // For showing the toast
 
   const handleSignup = () => {
-    // Reset error before submission
     setError('');
 
     // Basic validation
@@ -23,12 +23,28 @@ function Register() {
       return;
     }
 
+    // Store the email and password in localStorage
+    localStorage.setItem('email', email);
+    localStorage.setItem('password', password);
+
     console.log('Name:', name);
     console.log('Email:', email);
     console.log('Password:', password);
     console.log('Confirm Password:', confirmPassword);
     
-    // Add Axios POST request here to send registration data to backend
+    // Show the toast notification
+    setShowToast(true);
+
+    // Hide the toast after 3 seconds
+    setTimeout(() => {
+      setShowToast(false);
+    }, 3000);
+  };
+
+  const handleAutoSave = () => {
+    // Optionally ask the user if they want to save the credentials for autofill in the login form
+    localStorage.setItem('autoSave', 'true');
+    alert('Your data will be autofilled during login.');
   };
 
   return (
@@ -62,12 +78,23 @@ function Register() {
         />
         <select className="user-select">
           <option value="user">user</option>
+          <option value="user">admin</option>
         </select>
         <button className="signup-button" onClick={handleSignup}>
           Register Now
         </button>
-        <p>Already have an account? <a href="#">Login now</a></p>
+        <p>Already have an account? <a href="/login">Login now</a></p>
       </div>
+
+      {/* Toast Notification */}
+      {showToast && (
+        <div className="toast">
+          <p>Registration Successful!</p>
+          <button className="auto-save-button" onClick={handleAutoSave}>
+            Auto Save Credentials
+          </button>
+        </div>
+      )}
     </div>
   );
 }
