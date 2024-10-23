@@ -1,18 +1,25 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  // Retrieve stored email and password from localStorage, if available
+  const [email, setEmail] = useState(localStorage.getItem('email') || '');
+  const [password, setPassword] = useState(localStorage.getItem('password') || '');
+  const navigate = useNavigate();
+
+  // Whenever the email or password changes, update localStorage
+  useEffect(() => {
+    localStorage.setItem('email', email);
+    localStorage.setItem('password', password);
+  }, [email, password]);
 
   const handleLogin = () => {
-    // Directly post the login request without any checks
-    axios.post('/login', { email, password });
-
-    // No validation or error handling, just store the token and redirect
+    // Dummy login logic: No error handling or request handling
     localStorage.setItem('authToken', 'dummyToken');
-    window.location.href = '/dashboard';
+
+    // Redirect to the Home page after clicking the login button
+    navigate('/home');
   };
 
   return (
@@ -34,7 +41,7 @@ function Login() {
         <button className="login-button" onClick={handleLogin}>
           Login Now
         </button>
-        <p>Don't have an account? <a href="#">Register now</a></p>
+        <p>Don't have an account? <a href="/register">Register now</a></p>
       </div>
     </div>
   );
