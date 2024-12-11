@@ -1,6 +1,6 @@
 
 # Folder structure:
-Here is the folder structure of the repository :
+Here's the folder structure of the repository :
 ```
 
 LICENSE
